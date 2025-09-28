@@ -1,10 +1,7 @@
 import sys
 import os
-import logging
 from utils.logger import setup_logging
 from tasks.celery_app import celery_app
-
-from config.settings import settings
 from events.rabbitmq_listener import start_event_listener_thread
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))

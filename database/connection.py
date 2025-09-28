@@ -42,3 +42,7 @@ class DatabaseConnection:
 
 
 db_connection = DatabaseConnection()
+
+def get_database() -> Database:
+    """Get the database instance"""
+    return db_connection.connect()
