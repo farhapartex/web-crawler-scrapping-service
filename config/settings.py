@@ -15,6 +15,8 @@ class Settings:
 
     BOOK_SHOP_URL = os.getenv("BOOK_SHOP_URL", "https://books.toscrape.com")
 
+    RABBITMQ_URL = os.getenv("RABBITMQ_URL", "amqp://admin:password123@localhost:5672/")
+
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
 
     REQUEST_DELAY = float(os.getenv("REQUEST_DELAY", "1.0"))

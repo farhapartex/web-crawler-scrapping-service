@@ -219,3 +219,16 @@ def process_book_details(self, sync_job_id_str: str, raw_data_id_str: str):
     except Exception as e:
         logger.error(f"Failed to process book details: {e}")
         raise
+
+
+def start_scraping_service():
+    logger.info("Starting Book Scraping Service")
+
+    try:
+        result = start_scraping_job.delay(settings.BOOK_SHOP_URL)
+        logger.info(f"Scraping job started with task ID: {result.id}")
+        return result.id
+
+    except Exception as e:
+        logger.error(f"Failed to start scraping job: {e}")
+        raise
